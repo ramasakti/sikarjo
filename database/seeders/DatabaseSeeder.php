@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
             ->insert([
                 'username' => 'adminsikarjo',
                 'password' => bcrypt('adminsikarjo'),
-                'nama' => 'Siti Aminatus S',
+                'name' => 'Siti Aminatus S',
                 'status' => 'Admin',
                 'whatsapp' => '628'
             ]);
