@@ -9,6 +9,12 @@
             <input class="uk-search-input" type="search" placeholder="Search" aria-label="Search">
         </form>
     </div>
+    @if (session()->has('success'))    
+        <div class="uk-alert-success" uk-alert>
+            <a class="uk-alert-close" uk-close></a>
+            <p>{{ session('success') }}</p>
+        </div>
+    @endif
     <div class="uk-child-width-1-3@m uk-margin-top" uk-grid>
         @foreach ($dataBarang as $barang)
             <div>

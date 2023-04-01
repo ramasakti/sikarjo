@@ -25,6 +25,13 @@ class Barang extends Controller
         $filename = date('YmdHis') . '.' . $ext;
         $request->file('foto')->storeAs('public/foto', $filename);
 
+        $validReq = $request->validate([
+            'nama_barang' => 'required',
+            'foto' => 'image|file|max:4096',
+            'jenis' => 'required',
+            'harga' => 'required|numeric',
+        ]);
+
         DB::table('barang')
             ->insert([
                 'nama_barang' => $request->nama_barang,
