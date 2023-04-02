@@ -20,11 +20,12 @@
             <div>
                 <div class="uk-card uk-card-default">
                     <div class="uk-card-media-top">
-                        <img class="uk-align-center" src="storage/foto/{{ $barang->foto }}" width="180" height="120">
+                        <img class="uk-align-center" src="/storage/foto/{{ $barang->foto }}" width="180" height="120">
                         <hr class="uk-margin-remove">
                     </div>
                     <div class="uk-card-body uk-padding-small">
                         <h3 class="uk-card-title">{{ $barang->nama_barang }}</h3>
+                        <p class="uk-text-dark">Stok: {{ $barang->stok }}</p>
                         <p class="uk-text-success">Rp. {{ $barang->harga }}</p>
                         <a href="#edit-barang-{{ $barang->id_barang }}" uk-toggle uk-icon="settings"></a>
                         @include('barang.edit-barang')

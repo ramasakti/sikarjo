@@ -6,7 +6,7 @@ use DB;
 use App\Models\File;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
-use App\Http\Requests\StoreFileRequest;
+use Illuminate\Support\Facades\Storage;
 
 class Barang extends Controller
 {
@@ -52,24 +52,33 @@ class Barang extends Controller
             'foto' => 'image|file|max:4096',
             'jenis' => 'required',
             'harga' => 'required|numeric',
+            'stok' => 'required|numeric'
         ]);
 
+        $detailBarang = DB::table('barang')->where('id_barang', $request->id_barang)->get();
+
         if ($request->file('foto')) {
-            dd('kontolodon');
+            //Hapus Foto Lama
+            $fotoLama = '/public/foto/' . $detailBarang[0]->foto;
+            Storage::delete($fotoLama);
+
+            //Upload Foto Baru
+            $ext = $request->file('foto')->getClientOriginalExtension();
+            $filename = date('YmdHis') . '.' . $ext;
+            $request->file('foto')->storeAs('/public/foto', $filename);
         }
-        $ext = $request->file('foto')->getClientOriginalExtension();
-        $filename = date('YmdHis') . '.' . $ext;
-        $request->file('foto')->storeAs('public/foto', $filename);
 
         DB::table('barang')
-            ->insert([
+            ->where('id_barang', $request->id_barang)
+            ->update([
                 'nama_barang' => $validReq['nama_barang'],
                 'foto' => $filename,
                 'jenis' => $validReq['jenis'],
-                'harga' => $validReq['harga']
+                'harga' => $validReq['harga'],
+                'stok' => $validReq['stok']
             ]);
         
-        return back()->with('success', 'Berhasil menambahkan barang');
+        return back()->with('success', 'Berhasil mengubah barang');
     }
 
     public function delete(Request $request)
