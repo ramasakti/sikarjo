@@ -9,6 +9,7 @@
     <title>Simple House Template</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />    
 	<link href="template/css/templatemo-style.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.13/dist/css/uikit.min.css" />
 </head>
 <body> 
 	<div class="container">
@@ -21,15 +22,14 @@
 						<div class="col-md-6 col-12">
 							<img src="template/img/simple-house-logo.png" alt="Logo" class="tm-site-logo" /> 
 							<div class="tm-site-text-box">
-								<h1 class="tm-site-title">Sikarjo</h1>
-								<h6 class="tm-site-description">Sistem Koperasi</h6>	
+								<h1 class="tm-site-title uk-text-success">Sikarjo</h1>
 							</div>
 						</div>
 						<nav class="col-md-6 col-12 tm-nav">
 							<ul class="tm-nav-ul">
 								<li class="tm-nav-li"><a href="/" class="tm-nav-link active">Home</a></li>
-								<li class="tm-nav-li"><a href="/about" class="tm-nav-link">About</a></li>
 								<li class="tm-nav-li"><a href="/login" class="tm-nav-link">Login</a></li>
+								<li class="tm-nav-li"><a href="/transaksi/cart" class="tm-nav-link" uk-icon="icon: cart"></a></li>
 							</ul>
 						</nav>	
 					</div>
@@ -57,233 +57,63 @@
 			<div class="row tm-gallery">
 				<!-- gallery page 1 -->
 				<div id="tm-gallery-page-makanan" class="tm-gallery-page">
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-						<figure>
-							<img src="template/img/gallery/01.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-							<figcaption>
-								<h4 class="tm-gallery-title">Fusce dictum finibus</h4>
-								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
-								<p class="tm-gallery-price">$45 / $55</p>
-							</figcaption>
-						</figure>
-					</article>
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-						<figure>
-							<img src="template/img/gallery/02.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-							<figcaption>
-								<h4 class="tm-gallery-title">Aliquam sagittis</h4>
-								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
-								<p class="tm-gallery-price">$65 / $70</p>
-							</figcaption>
-						</figure>
-					</article>
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-						<figure>
-							<img src="template/img/gallery/03.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-							<figcaption>
-								<h4 class="tm-gallery-title">Sed varius turpis</h4>
-								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
-								<p class="tm-gallery-price">$30.50</p>
-							</figcaption>
-						</figure>
-					</article>
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-						<figure>
-							<img src="template/img/gallery/04.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-							<figcaption>
-								<h4 class="tm-gallery-title">Aliquam sagittis</h4>
-								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
-								<p class="tm-gallery-price">$25.50</p>
-							</figcaption>
-						</figure>
-					</article>
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-						<figure>
-							<img src="template/img/gallery/05.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-							<figcaption>
-								<h4 class="tm-gallery-title">Maecenas eget justo</h4>
-								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
-								<p class="tm-gallery-price">$80.25</p>
-							</figcaption>
-						</figure>
-					</article>
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-						<figure>
-							<img src="template/img/gallery/06.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-							<figcaption>
-								<h4 class="tm-gallery-title">Quisque et felis eros</h4>
-								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
-								<p class="tm-gallery-price">$20 / $40 / $60</p>
-							</figcaption>
-						</figure>
-					</article>
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-						<figure>
-							<img src="template/img/gallery/07.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-							<figcaption>
-								<h4 class="tm-gallery-title">Sed ultricies dui</h4>
-								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
-								<p class="tm-gallery-price">$94</p>
-							</figcaption>
-						</figure>
-					</article>
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-						<figure>
-							<img src="template/img/gallery/08.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-							<figcaption>
-								<h4 class="tm-gallery-title">Donec porta consequat</h4>
-								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
-								<p class="tm-gallery-price">$15</p>
-							</figcaption>
-						</figure>
-					</article>
+					@foreach ($dataMakanan as $makanan)
+						<div class="uk-child-width-1-3@m" uk-grid>
+							<div>
+								<div class="uk-card uk-card-default">
+									<div class="uk-card-media-top">
+										<img class="uk-height-medium" src="/storage/foto/{{ $makanan->foto }}" width="1200" height="1200" alt="">
+									</div>
+									<div class="uk-card-body">
+										<h3 class="uk-card-title uk-margin-small">{{ $makanan->nama_barang }}</h3>
+										<p class="uk-text-success uk-margin-small">Rp. {{ number_format($makanan->harga,0,'','.') }}</p>
+										<a onclick="saveToCart({ id_barang:{{ $makanan->id_barang }}, nama_barang: '{{ $makanan->nama_barang }}', foto: '{{ $makanan->foto }}', harga: {{ $makanan->harga }}, jumlah: 1 })" uk-icon="cart"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					@endforeach
 				</div> <!-- gallery page 1 -->
 				
 				<!-- gallery page 2 -->
 				<div id="tm-gallery-page-minuman" class="tm-gallery-page hidden">
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-						<figure>
-							<img src="template/img/gallery/04.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-							<figcaption>
-								<h4 class="tm-gallery-title">Salad Menu One</h4>
-								<p class="tm-gallery-description">Proin eu velit egestas, viverra sapien eget, consequat nunc. Vestibulum tristique</p>
-								<p class="tm-gallery-price">$25</p>
-							</figcaption>
-						</figure>
-					</article>
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-						<figure>
-							<img src="template/img/gallery/03.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-							<figcaption>
-								<h4 class="tm-gallery-title">Second Title Salad</h4>
-								<p class="tm-gallery-description">Proin eu velit egestas, viverra sapien eget, consequat nunc. Vestibulum tristique</p>
-								<p class="tm-gallery-price">$30</p>
-							</figcaption>
-						</figure>
-					</article>
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-						<figure>
-							<img src="template/img/gallery/05.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-							<figcaption>
-								<h4 class="tm-gallery-title">Third Salad Item</h4>
-								<p class="tm-gallery-description">Proin eu velit egestas, viverra sapien eget, consequat nunc. Vestibulum tristique</p>
-								<p class="tm-gallery-price">$45</p>
-							</figcaption>
-						</figure>
-					</article>
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-						<figure>
-							<img src="template/img/gallery/01.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-							<figcaption>
-								<h4 class="tm-gallery-title">Superior Salad</h4>
-								<p class="tm-gallery-description">Proin eu velit egestas, viverra sapien eget, consequat nunc. Vestibulum tristique</p>
-								<p class="tm-gallery-price">$50</p>
-							</figcaption>
-						</figure>
-					</article>
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-						<figure>
-							<img src="template/img/gallery/08.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-							<figcaption>
-								<h4 class="tm-gallery-title">Sed ultricies dui</h4>
-								<p class="tm-gallery-description">Proin eu velit egestas, viverra sapien eget, consequat nunc. Vestibulum tristique</p>
-								<p class="tm-gallery-price">$55 / $60</p>
-							</figcaption>
-						</figure>
-					</article>
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-						<figure>
-							<img src="template/img/gallery/07.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-							<figcaption>
-								<h4 class="tm-gallery-title">Maecenas eget justo</h4>
-								<p class="tm-gallery-description">Proin eu velit egestas, viverra sapien eget, consequat nunc. Vestibulum tristique</p>
-								<p class="tm-gallery-price">$75</p>
-							</figcaption>
-						</figure>
-					</article>
+					@foreach ($dataMinuman as $minuman)
+						<div class="uk-child-width-1-3@m" uk-grid>
+							<div>
+								<div class="uk-card uk-card-default">
+									<div class="uk-card-media-top">
+										<img class="uk-height-medium" src="/storage/foto/{{ $minuman->foto }}" width="1200" height="1200" alt="">
+									</div>
+									<div class="uk-card-body">
+										<h3 class="uk-card-title uk-margin-small">{{ $minuman->nama_barang }}</h3>
+										<p class="uk-text-success uk-margin-small">Rp. {{ number_format($minuman->harga,0,'','.') }}</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					@endforeach
 				</div> <!-- gallery page 2 -->
 				
 				<!-- gallery page 3 -->
 				<div id="tm-gallery-page-atk" class="tm-gallery-page hidden">
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-						<figure>
-							<img src="template/img/gallery/08.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-							<figcaption>
-								<h4 class="tm-gallery-title">Noodle One</h4>
-								<p class="tm-gallery-description">Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-								<p class="tm-gallery-price">$12.50</p>
-							</figcaption>
-						</figure>
-					</article>
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-						<figure>
-							<img src="template/img/gallery/07.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-							<figcaption>
-								<h4 class="tm-gallery-title">Noodle Second</h4>
-								<p class="tm-gallery-description">Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-								<p class="tm-gallery-price">$15.50</p>
-							</figcaption>
-						</figure>
-					</article>
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-						<figure>
-							<img src="template/img/gallery/06.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-							<figcaption>
-								<h4 class="tm-gallery-title">Third Soft Noodle</h4>
-								<p class="tm-gallery-description">Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-								<p class="tm-gallery-price">$20.50</p>
-							</figcaption>
-						</figure>
-					</article>
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-						<figure>
-							<img src="template/img/gallery/05.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-							<figcaption>
-								<h4 class="tm-gallery-title">Aliquam sagittis</h4>
-								<p class="tm-gallery-description">Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-								<p class="tm-gallery-price">$30.25</p>
-							</figcaption>
-						</figure>
-					</article>
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-						<figure>
-							<img src="template/img/gallery/04.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-							<figcaption>
-								<h4 class="tm-gallery-title">Maecenas eget justo</h4>
-								<p class="tm-gallery-description">Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-								<p class="tm-gallery-price">$35.50</p>
-							</figcaption>
-						</figure>
-					</article>
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-						<figure>
-							<img src="template/img/gallery/03.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-							<figcaption>
-								<h4 class="tm-gallery-title">Quisque et felis eros</h4>
-								<p class="tm-gallery-description">Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-								<p class="tm-gallery-price">$40.50</p>
-							</figcaption>
-						</figure>
-					</article>
-
+					@foreach ($dataAtk as $atk)
+						<div class="uk-child-width-1-3@m" uk-grid>
+							<div>
+								<div class="uk-card uk-card-default">
+									<div class="uk-card-media-top">
+										<img class="uk-height-medium" src="/storage/foto/{{ $atk->foto }}" width="1200" height="1200" alt="">
+									</div>
+									<div class="uk-card-body">
+										<h3 class="uk-card-title uk-margin-small">{{ $atk->nama_barang }}</h3>
+										<p class="uk-text-success uk-margin-small">Rp. {{ number_format($atk->harga,0,'','.') }}</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					@endforeach
 				</div> <!-- gallery page 3 -->
 			</div>
-			<div class="tm-section tm-container-inner">
-				<div class="row">
-					<div class="col-md-6">
-						<figure class="tm-description-figure">
-							<img src="template/img/img-01.jpg" alt="Image" class="img-fluid" />
-						</figure>
-					</div>
-					<div class="col-md-6">
-						<div class="tm-description-box"> 
-							<h4 class="tm-gallery-title">Maecenas nulla neque</h4>
-							<p class="tm-mb-45">Redistributing this template as a downloadable ZIP file on any template collection site is strictly prohibited. You will need to <a rel="nofollow" href="https://templatemo.com/contact">talk to us</a> for additional permissions about our templates. Thank you.</p>
-							<a href="about.html" class="tm-btn tm-btn-default tm-right">Read More</a>
-						</div>
-					</div>
-				</div>
-			</div>
+			
 		</main>
 
 		<footer class="tm-footer text-center">
@@ -307,6 +137,25 @@
 				$(this).addClass("active");
 			});
 		});
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.16.13/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.16.13/dist/js/uikit-icons.min.js"></script>
+	<script>
+		if (localStorage.getItem('cart') == null) localStorage.setItem('cart', '[]')
+
+		const itemToCart = []
+		const cart = JSON.parse(localStorage.getItem('cart'))
+
+		const saveToCart = (barang) => {
+			const filter = cart.find((cartFiltered) => cartFiltered.id_barang == barang.id_barang)
+
+			if (filter == undefined) {
+				itemToCart.push(barang)
+				localStorage.setItem('cart', JSON.stringify(itemToCart))
+			}else{
+				console.log(filter)
+			}
+		}
 	</script>
 </body>
 </html>

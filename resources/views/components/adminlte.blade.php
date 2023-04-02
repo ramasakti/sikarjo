@@ -68,7 +68,15 @@
                                     <a href="/barang"><span>Barang</span></a>
                                 </li>
                                 <li class="{{ ($navactive === 'transaksi' ? 'active' : '') }}">
-                                    <a href="/transaksi"><span>Transaksi</span></a>
+                                    <a href="javascript:void(0)" aria-expanded="true"><span>Transaksi</span></a>
+                                    <ul class="collapse">
+                                        <li>
+                                            <a href="/transaksi/scan"><span>Scan</span></a>
+                                        </li>
+                                        <li>    
+                                            <a href="/transaksi/riwayat"><span>Riwayat</span></a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </li>
                         </ul>

@@ -5,6 +5,7 @@ use App\Http\Controllers\Login;
 use App\Http\Controllers\Barang;
 use App\Http\Controllers\Transaksi;
 use App\Http\Controllers\Testing;
+use App\Http\Controllers\Index;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,7 @@ use App\Http\Controllers\Testing;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Index::class, 'index']);
 
 Route::get('/test', [Testing::class, 'index']);
 
@@ -32,4 +31,6 @@ Route::post('/barang/store', [Barang::class, 'store']);
 Route::post('/barang/update', [Barang::class, 'update']);
 Route::post('/barang/delete', [Barang::class, 'delete']);
 
-Route::get('/transaksi', [Transaksi::class, 'index']);
+Route::get('/transaksi/scan', [Transaksi::class, 'scan']);
+Route::get('/transaksi/riwayat', [Transaksi::class, 'riwayat']);
+Route::get('/transaksi/cart', [Transaksi::class, 'cart']);
