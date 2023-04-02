@@ -92,5 +92,7 @@ class Barang extends Controller
         DB::table('barang')
             ->where('id_barang', $request->id_barang)
             ->delete();
+
+        return back()->with('success', 'Berhasil hapus barang');
     }
 }
