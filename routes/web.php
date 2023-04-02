@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Login;
 use App\Http\Controllers\Barang;
 use App\Http\Controllers\Transaksi;
+use App\Http\Controllers\Testing;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ use App\Http\Controllers\Transaksi;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test', [Testing::class, 'index']);
 
 Route::get('/login', [Login::class, 'index'])->name('login');
 Route::post('/login', [Login::class, 'authenticate']);

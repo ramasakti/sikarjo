@@ -22,6 +22,9 @@
                 </select>
             </div>
             <div class="uk-margin">
+                <input name="stok" class="uk-input" type="number" placeholder="Stok Barang" aria-label="Stok Barang" required>
+            </div>
+            <div class="uk-margin">
                 <input name="harga" class="uk-input" type="number" placeholder="Harga Barang" aria-label="Harga Barang" required>
             </div>
 
