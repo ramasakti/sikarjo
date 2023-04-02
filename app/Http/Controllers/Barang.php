@@ -83,6 +83,14 @@ class Barang extends Controller
 
     public function delete(Request $request)
     {
+        $detailBarang = DB::table('barang')->where('id_barang', $request->id_barang)->get();
 
+        //Hapus Foto Barang
+        $fotoLama = '/public/foto/' . $detailBarang[0]->foto;
+        Storage::delete($fotoLama);
+
+        DB::table('barang')
+            ->where('id_barang', $request->id_barang)
+            ->delete();
     }
 }
