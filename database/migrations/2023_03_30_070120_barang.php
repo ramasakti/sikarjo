@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('foto');
             $table->string('jenis');
             $table->integer('harga');
+            $table->integer('stok');
         });
     }
 

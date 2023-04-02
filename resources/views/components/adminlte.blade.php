@@ -220,6 +220,22 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function previewImage(){
+            const foto = document.querySelector('#foto');
+            const fotopreview = document.querySelector('.foto-preview');
+    
+            fotopreview.style.display = 'block';
+    
+            const ofReader = new FileReader();
+            ofReader.readAsDataURL(foto.files[0])
+    
+            ofReader.onload = function(ofrEvent) {
+                fotopreview.src = ofrEvent.target.result;
+            }
+        }
+    </script>
     
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.24/dist/js/uikit.min.js"></script>

@@ -26,8 +26,10 @@
                     <div class="uk-card-body uk-padding-small">
                         <h3 class="uk-card-title">{{ $barang->nama_barang }}</h3>
                         <p class="uk-text-success">Rp. {{ $barang->harga }}</p>
-                        <a href="" uk-icon="settings"></a>
-                        <a href="" uk-icon="trash"></a>
+                        <a href="#edit-barang-{{ $barang->id_barang }}" uk-toggle uk-icon="settings"></a>
+                        @include('barang.edit-barang')
+                        <a href="#delete-barang-{{ $barang->id_barang }}" uk-toggle uk-icon="trash"></a>
+                        @include('barang.delete-barang')
                     </div>
                 </div>
             </div>

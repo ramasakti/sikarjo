@@ -8,7 +8,11 @@
                 <input name="nama_barang" class="uk-input" type="text" placeholder="Nama Barang" aria-label="Nama Barang" required>
             </div>
             <div class="input-group mb-3">
-                <input name="foto" type="file" class="form-control" id="uploader" accept="image/*" required>
+                <label for="foto" class="uk-form-label">Foto Barang</label>
+                <div class="uk-margin-remove">
+                    <img class="foto-preview img-fluid uk-align-center uk-height-max-medium uk-margin-remove">
+                </div>
+                <input name="foto" type="file" class="uk-input uk-margin-small-top" id="foto" accept="image/*" onchange="previewImage()" required>
             </div>
             <div class="uk-margin">
                 <select name="jenis" class="uk-select" aria-label="Select" required>

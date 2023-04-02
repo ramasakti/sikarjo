@@ -21,10 +21,6 @@ class Barang extends Controller
     
     public function store(Request $request)
     {   
-        $ext = $request->file('foto')->getClientOriginalExtension();
-        $filename = date('YmdHis') . '.' . $ext;
-        $request->file('foto')->storeAs('public/foto', $filename);
-
         $validReq = $request->validate([
             'nama_barang' => 'required',
             'foto' => 'image|file|max:4096',
@@ -32,12 +28,16 @@ class Barang extends Controller
             'harga' => 'required|numeric',
         ]);
 
+        $ext = $request->file('foto')->getClientOriginalExtension();
+        $filename = date('YmdHis') . '.' . $ext;
+        $request->file('foto')->storeAs('public/foto', $filename);
+
         DB::table('barang')
             ->insert([
-                'nama_barang' => $request->nama_barang,
+                'nama_barang' => $validReq['nama_barang'],
                 'foto' => $filename,
-                'jenis' => $request->jenis,
-                'harga' => $request->harga
+                'jenis' => $validReq['jenis'],
+                'harga' => $validReq['harga']
             ]);
         
         return back()->with('success', 'Berhasil menambahkan barang');
