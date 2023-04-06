@@ -34,3 +34,4 @@ Route::post('/barang/delete', [Barang::class, 'delete']);
 Route::get('/transaksi/scan', [Transaksi::class, 'scan']);
 Route::get('/transaksi/riwayat', [Transaksi::class, 'riwayat']);
 Route::get('/transaksi/cart', [Transaksi::class, 'cart']);
+Route::post('/transaksi/store', [Transaksi::class, 'transaksi']);

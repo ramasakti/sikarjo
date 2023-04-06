@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('status');
             $table->string('password');
             $table->text('whatsapp');
+            $table->boolean('transaksi')->default(false);
         });
     }
 

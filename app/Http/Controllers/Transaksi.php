@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
 
 class Transaksi extends Controller
@@ -24,11 +25,13 @@ class Transaksi extends Controller
 
     public function cart()
     {
-        return view('transaksi.cart', []);
+        return view('transaksi.cart', [
+            'dataTransaksi' => ''
+        ]);
     }
 
     public function transaksi(Request $request)
     {
-
+        
     }
 }

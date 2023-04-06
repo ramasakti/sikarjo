@@ -27,9 +27,9 @@
 						</div>
 						<nav class="col-md-6 col-12 tm-nav">
 							<ul class="tm-nav-ul">
-								<li class="tm-nav-li"><a href="/" class="tm-nav-link active">Home</a></li>
+								<li class="tm-nav-li"><a href="/" class="tm-nav-link active" uk-icon="icon: bag; ratio: 1.5"></a></li>
+								<li class="tm-nav-li"><a href="/transaksi/cart" class="tm-nav-link" uk-icon="icon: cart; ratio: 1.5"></a><span class="uk-badge"></span></li>
 								<li class="tm-nav-li"><a href="/login" class="tm-nav-link">Login</a></li>
-								<li class="tm-nav-li"><a href="/transaksi/cart" class="tm-nav-link" uk-icon="icon: cart"></a></li>
 							</ul>
 						</nav>	
 					</div>
@@ -57,8 +57,8 @@
 			<div class="row tm-gallery">
 				<!-- gallery page 1 -->
 				<div id="tm-gallery-page-makanan" class="tm-gallery-page">
-					@foreach ($dataMakanan as $makanan)
-						<div class="uk-child-width-1-3@m" uk-grid>
+					<div class="uk-child-width-1-3@m" uk-grid>
+						@foreach ($dataMakanan as $makanan)
 							<div>
 								<div class="uk-card uk-card-default">
 									<div class="uk-card-media-top">
@@ -67,12 +67,14 @@
 									<div class="uk-card-body">
 										<h3 class="uk-card-title uk-margin-small">{{ $makanan->nama_barang }}</h3>
 										<p class="uk-text-success uk-margin-small">Rp. {{ number_format($makanan->harga,0,'','.') }}</p>
-										<a onclick="saveToCart({ id_barang:{{ $makanan->id_barang }}, nama_barang: '{{ $makanan->nama_barang }}', foto: '{{ $makanan->foto }}', harga: {{ $makanan->harga }}, jumlah: 1 })" uk-icon="cart"></a>
+										<div id="cart-contain-{{ $makanan->id_barang }}">
+											<a id="cart-makan-{{ $makanan->id_barang }}" onclick="saveToCart({ id_barang:{{ $makanan->id_barang }}, nama_barang: '{{ $makanan->nama_barang }}', foto: '{{ $makanan->foto }}', harga: {{ $makanan->harga }}, jumlah: 1 })" uk-icon="cart"></a>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					@endforeach
+						@endforeach
+					</div>
 				</div> <!-- gallery page 1 -->
 				
 				<!-- gallery page 2 -->
@@ -113,13 +115,12 @@
 					@endforeach
 				</div> <!-- gallery page 3 -->
 			</div>
-			
 		</main>
 
+		<a href="#" uk-totop uk-scroll class="uk-text-success uk-icon-button uk-margin-left"></a>
+
 		<footer class="tm-footer text-center">
-			<p>Copyright &copy; 2020 Simple House 
-            
-            | Design: <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
+			<p>Copyright &copy; 2020 Simple House | Design: <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
 		</footer>
 	</div>
 	<script src="template/js/jquery.min.js"></script>
@@ -145,13 +146,25 @@
 
 		const itemToCart = []
 		const cart = JSON.parse(localStorage.getItem('cart'))
+		const badge = document.querySelector('#uk-badge')
+		const spinner = `<div id="spinner" uk-spinner="ratio: 0.6"></div>`
+		const ceklis = `<span uk-icon="check" class="uk-text-primary"></span>`
 
 		const saveToCart = (barang) => {
 			const filter = cart.find((cartFiltered) => cartFiltered.id_barang == barang.id_barang)
+			const cartIcon = document.getElementById('cart-makan-' + barang.id_barang)
+			cartIcon.innerHTML = spinner
+
+			setInterval(() => {
+				document.getElementById('spinner').remove()
+				cartIcon.remove()
+				document.getElementById('cart-contain-' + barang.id_barang).innerHTML = ceklis
+			}, 1000);
 
 			if (filter == undefined) {
 				itemToCart.push(barang)
 				localStorage.setItem('cart', JSON.stringify(itemToCart))
+				localStorage.setItem('total', )
 			}else{
 				console.log(filter)
 			}

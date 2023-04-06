@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use DB;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
@@ -26,8 +27,13 @@ class Login extends Controller
             'password' => 'required'
         ]);
 
+        $detailUser = DB::table('users')->where('username', $request->username)->get();
+
         if (Auth::attempt($credentials)){
             $request->session()->put('username', $request->username);
+            if ($detailUser[0]->status == 'User') {
+                return redirect()->intended('/');
+            }
             return redirect()->intended('/dashboard');
         }else{
             return back()->with('gagal', 'Username atau Password salah!'); 

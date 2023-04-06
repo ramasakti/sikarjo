@@ -26,7 +26,7 @@
                 <input name="stok" class="uk-input" type="number" value="{{ $barang->stok }}" aria-label="{{ $barang->harga }}" required>
             </div>
 
-            <button class="uk-button uk-button-primary uk-button-small">TAMBAHKAN</button>
+            <button class="uk-button uk-button-primary uk-button-small">SIMPAN</button>
         </form>
     </div>
 </div>

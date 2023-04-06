@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date('tanggal_transaksi');
             $table->string('pembeli');
             $table->integer('total');
+            $table->boolean('lunas')->default(false);
         });
     }
 

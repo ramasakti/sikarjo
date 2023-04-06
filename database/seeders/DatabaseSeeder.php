@@ -30,5 +30,14 @@ class DatabaseSeeder extends Seeder
                 'status' => 'Admin',
                 'whatsapp' => '628'
             ]);
+
+        DB::table('users')
+            ->insert([
+                'username' => 'pembeli',
+                'password' => bcrypt('pembeli'),
+                'name' => 'Nama Pembeli',
+                'status' => 'User',
+                'whatsapp' => '628'
+            ]);
     }
 }

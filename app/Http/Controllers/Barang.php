@@ -66,17 +66,26 @@ class Barang extends Controller
             $ext = $request->file('foto')->getClientOriginalExtension();
             $filename = date('YmdHis') . '.' . $ext;
             $request->file('foto')->storeAs('/public/foto', $filename);
-        }
 
-        DB::table('barang')
-            ->where('id_barang', $request->id_barang)
-            ->update([
-                'nama_barang' => $validReq['nama_barang'],
-                'foto' => $filename,
-                'jenis' => $validReq['jenis'],
-                'harga' => $validReq['harga'],
-                'stok' => $validReq['stok']
-            ]);
+            DB::table('barang')
+                ->where('id_barang', $request->id_barang)
+                ->update([
+                    'nama_barang' => $validReq['nama_barang'],
+                    'foto' => $filename,
+                    'jenis' => $validReq['jenis'],
+                    'harga' => $validReq['harga'],
+                    'stok' => $validReq['stok']
+                ]);
+        }else{
+            DB::table('barang')
+                ->where('id_barang', $request->id_barang)
+                ->update([
+                    'nama_barang' => $validReq['nama_barang'],
+                    'jenis' => $validReq['jenis'],
+                    'harga' => $validReq['harga'],
+                    'stok' => $validReq['stok']
+                ]);
+        }
         
         return back()->with('success', 'Berhasil mengubah barang');
     }
