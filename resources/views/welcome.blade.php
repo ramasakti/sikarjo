@@ -63,7 +63,7 @@
 							<div>
 								<div class="uk-card uk-card-default">
 									<div class="uk-card-media-top">
-										<img class="uk-height-medium" src="/storage/foto/{{ $makanan->foto }}" width="1200" height="1200" alt="">
+										<img class="uk-height-medium" src="{{ storage_path($makanan->foto) }}" width="1200" height="1200" alt="">
 									</div>
 									<div class="uk-card-body">
 										<h3 class="uk-card-title uk-margin-small">{{ $makanan->nama_barang }}</h3>
