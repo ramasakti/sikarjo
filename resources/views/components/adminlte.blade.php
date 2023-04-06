@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="/adminlte/css/default-css.css">
     <link rel="stylesheet" href="/adminlte/css/styles.css">
     <link rel="stylesheet" href="/adminlte/css/responsive.css">
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     <!-- modernizr css -->
     <script src="/adminlte/js/vendor/modernizr-2.8.3.min.js"></script>
     {{-- TinyMCE --}}

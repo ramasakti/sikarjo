@@ -29,6 +29,7 @@
 							<ul class="tm-nav-ul">
 								<li class="tm-nav-li"><a href="/" class="tm-nav-link active" uk-icon="icon: bag; ratio: 1.5"></a></li>
 								<li class="tm-nav-li"><a href="/transaksi/cart" class="tm-nav-link" uk-icon="icon: cart; ratio: 1.5"></a><span class="uk-badge"></span></li>
+								<li class="tm-nav-li"><a href="/transaksi/pending" class="tm-nav-link" uk-icon="icon: warning; ratio: 1.5"></a></li>
 								<li class="tm-nav-li"><a href="/login" class="tm-nav-link">Login</a></li>
 							</ul>
 						</nav>	
