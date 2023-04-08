@@ -63,7 +63,7 @@
 							<div>
 								<div class="uk-card uk-card-default">
 									<div class="uk-card-media-top">
-										<img class="uk-height-medium" src="{{ storage_path($makanan->foto) }}" width="1200" height="1200" alt="">
+										<img class="uk-height-medium" src="{{ $makanan->foto }}" width="1200" height="1200" alt="">
 									</div>
 									<div class="uk-card-body">
 										<h3 class="uk-card-title uk-margin-small">{{ $makanan->nama_barang }}</h3>
@@ -81,15 +81,16 @@
 				<!-- gallery page 2 -->
 				<div id="tm-gallery-page-minuman" class="tm-gallery-page hidden">
 					@foreach ($dataMinuman as $minuman)
-						<div class="uk-child-width-1-3@m" uk-grid>
-							<div>
-								<div class="uk-card uk-card-default">
-									<div class="uk-card-media-top">
-										<img class="uk-height-medium" src="/storage/foto/{{ $minuman->foto }}" width="1200" height="1200" alt="">
-									</div>
-									<div class="uk-card-body">
-										<h3 class="uk-card-title uk-margin-small">{{ $minuman->nama_barang }}</h3>
-										<p class="uk-text-success uk-margin-small">Rp. {{ number_format($minuman->harga,0,'','.') }}</p>
+						<div>
+							<div class="uk-card uk-card-default">
+								<div class="uk-card-media-top">
+									<img class="uk-height-medium" src="{{ $minuman->foto }}" width="1200" height="1200" alt="">
+								</div>
+								<div class="uk-card-body">
+									<h3 class="uk-card-title uk-margin-small">{{ $minuman->nama_barang }}</h3>
+									<p class="uk-text-success uk-margin-small">Rp. {{ number_format($minuman->harga,0,'','.') }}</p>
+									<div id="cart-contain-{{ $minuman->id_barang }}">
+										<a id="cart-makan-{{ $minuman->id_barang }}" onclick="saveToCart({ id_barang:{{ $minuman->id_barang }}, nama_barang: '{{ $minuman->nama_barang }}', foto: '{{ $minuman->foto }}', harga: {{ $minuman->harga }}, jumlah: 1 })" uk-icon="cart"></a>
 									</div>
 								</div>
 							</div>
@@ -100,15 +101,16 @@
 				<!-- gallery page 3 -->
 				<div id="tm-gallery-page-atk" class="tm-gallery-page hidden">
 					@foreach ($dataAtk as $atk)
-						<div class="uk-child-width-1-3@m" uk-grid>
-							<div>
-								<div class="uk-card uk-card-default">
-									<div class="uk-card-media-top">
-										<img class="uk-height-medium" src="/storage/foto/{{ $atk->foto }}" width="1200" height="1200" alt="">
-									</div>
-									<div class="uk-card-body">
-										<h3 class="uk-card-title uk-margin-small">{{ $atk->nama_barang }}</h3>
-										<p class="uk-text-success uk-margin-small">Rp. {{ number_format($atk->harga,0,'','.') }}</p>
+						<div>
+							<div class="uk-card uk-card-default">
+								<div class="uk-card-media-top">
+									<img class="uk-height-medium" src="{{ $atk->foto }}" width="1200" height="1200" alt="">
+								</div>
+								<div class="uk-card-body">
+									<h3 class="uk-card-title uk-margin-small">{{ $atk->nama_barang }}</h3>
+									<p class="uk-text-success uk-margin-small">Rp. {{ number_format($atk->harga,0,'','.') }}</p>
+									<div id="cart-contain-{{ $atk->id_barang }}">
+										<a id="cart-makan-{{ $atk->id_barang }}" onclick="saveToCart({ id_barang:{{ $atk->id_barang }}, nama_barang: '{{ $atk->nama_barang }}', foto: '{{ $atk->foto }}', harga: {{ $atk->harga }}, jumlah: 1 })" uk-icon="cart"></a>
 									</div>
 								</div>
 							</div>

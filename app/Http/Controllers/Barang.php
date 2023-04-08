@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
+use Illuminate\Support\Facades\Auth;
 use App\Models\File;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;

@@ -5,6 +5,7 @@ use App\Http\Controllers\Login;
 use App\Http\Controllers\Barang;
 use App\Http\Controllers\Transaksi;
 use App\Http\Controllers\Testing;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Index;
 
 /*
