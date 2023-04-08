@@ -38,3 +38,8 @@ Route::get('/transaksi/cart', [Transaksi::class, 'cart']);
 Route::post('/transaksi/store', [Transaksi::class, 'transaksi']);
 Route::get('/transaksi/pending', [Transaksi::class, 'pending']);
 Route::post('/transaksi/engine', [Transaksi::class, 'engine']);
+
+
+Route::get('/storage/foto', function () {
+    Artisan::call('storage:link');
+});
